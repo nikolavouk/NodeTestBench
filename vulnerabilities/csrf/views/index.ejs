@@ -1,0 +1,27 @@
+<% include ../../../views/partials/header %>
+
+
+        <h1 class="page-header">Cross Site Request Forgery</h1>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6" style="padding-bottom: 30px;">
+                <% if(csrfToken == 'none') { %>
+                  <h4 class="sub-header">Vulnerable Form</h4>
+                  <form method="POST" action="/csrf/csrf-form-unprotected">
+                <% } else { %>
+                    <h4 class="sub-header">Safe Form</h4>
+                    <form method="POST" action="/csrf/csrf-form-protected">
+                <% } %>
+
+                    <div class="form-group">
+                      <input type="hidden" name="_csrf.token" value="{{csrfToken}}">
+                      <input name="name" class="form-control" id="exampleInputEmail1" placeholder="" value="woot">
+                    </div>
+                    <span> Csrf Token: </span> <%= csrfToken %>
+                    <div><br></div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </form>
+          </div>
+        </div>
+
+<% include ../../../views/partials/footer %>

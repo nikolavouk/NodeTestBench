@@ -12,9 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-alpha.1",
+    "csrf": "^3.0.3",
+    "csurf": "^1.9.0",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "express-session": "^1.14.1",
     "hooker": "^0.2.3",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "session": "^0.1.0"
   }
 }
