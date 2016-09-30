@@ -7,18 +7,18 @@
           <div class="col-xs-12 col-sm-6" style="padding-bottom: 30px;">
                 <% if(csrfToken == 'none') { %>
                   <h4 class="sub-header">Vulnerable Form</h4>
-                  <form method="POST" action="/csrf/csrf-form-unprotected">
+                  <form method="POST" id="vulnerable-form" action="/csrf/csrf-form-unprotected">
                       <div class="form-group">
                         <label>Name</label>
-                        <input name="name" class="form-control" id="Name" placeholder="" value="'ol Yeller">
+                        <input name="name" class="form-control" id="Name" placeholder="" value="Joe Danger">
                       </div>
                 <% } else { %>
                     <h4 class="sub-header">Safe Form</h4>
-                    <form method="POST" action="/csrf/csrf-form-protected">
+                    <form method="POST" id="safer-form" action="/csrf/csrf-form-protected">
                         <div class="form-group">
                           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                           <label>Name</label>
-                          <input name="name" class="form-control" id="Name" placeholder="" value="young Yelluh">
+                          <input name="name" class="form-control" id="Name" placeholder="" value="Joseph Safe">
                         </div>
                 <% } %>
                     <span> Csrf Token: </span> <%= csrfToken %>
